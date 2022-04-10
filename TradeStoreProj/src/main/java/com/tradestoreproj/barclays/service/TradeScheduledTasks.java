@@ -15,7 +15,7 @@ public class TradeScheduledTasks {
 	private static final Logger log = LoggerFactory.getLogger(TradeScheduledTasks.class);
 	
 	/**
-	 * This method is scheduled to trigger automatically at every 60 seconds 1 minute. It will update the expiry flags based on the maturity date
+	 * This method is scheduled to trigger automatically at every 60 seconds (1 minute). It will update the expiry flags based on the maturity date
 	 */
 	@Autowired
 	TradeOperationsService tradeOperationService;
