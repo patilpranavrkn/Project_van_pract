@@ -1,4 +1,4 @@
-package com.example.h2.controller;
+package com.tradestoreproj.barclays.controller;
 
 import java.util.List;
 
@@ -11,18 +11,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.h2.constant.StoreConstants;
-import com.example.h2.entity.TradeStore;
-import com.example.h2.exception.TradeOperationsCustomException;
-import com.example.h2.model.BaseApiResponse;
-import com.example.h2.model.ResponseListResponse;
-import com.example.h2.service.TradeOperationsService;
+import com.tradestoreproj.barclays.constant.StoreConstants;
+import com.tradestoreproj.barclays.entity.TradeStore;
+import com.tradestoreproj.barclays.exception.TradeOperationsCustomException;
+import com.tradestoreproj.barclays.model.BaseApiResponse;
+import com.tradestoreproj.barclays.model.ResponseListResponse;
+import com.tradestoreproj.barclays.model.TradeStoreRequestDTO;
+import com.tradestoreproj.barclays.service.TradeOperationsService;
 
 @RestController
 public class TradeStoreController {
 	
 	@Autowired
 	TradeOperationsService tradeOperationService;
+	/***
+	 * 
+	 * This endpoint retirieves all the information from the trade store
+	 */
 	
 	@GetMapping("/trades")
 	public ResponseEntity<ResponseListResponse> getAllProduct(){
@@ -35,9 +40,14 @@ public class TradeStoreController {
 		return ResponseEntity.ok().body(response);
 	}
 	
+	/***
+	 * This endpoint creates new Record in trade Store after the validations are completed
+	 * @param newTradeStore
+	 * @return
+	 */
 	
 	@PostMapping("/createtrade")
-	public ResponseEntity<BaseApiResponse> createTrade( @Valid @RequestBody TradeStore newTradeStore){
+	public ResponseEntity<BaseApiResponse> createTrade( @Valid @RequestBody TradeStoreRequestDTO newTradeStore){
 		
 		BaseApiResponse response =new BaseApiResponse();
 		try {

@@ -1,14 +1,16 @@
-package com.example.h2.model;
+package com.tradestoreproj.barclays.model;
 
 import java.time.LocalDate;
 
-import javax.persistence.Column;
+import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
-public class CreateRecordSaveRequest {
+public class TradeStoreRequestDTO {
+	
 	
 	public String getTradeId() {
 		return tradeId;
@@ -46,29 +48,32 @@ public class CreateRecordSaveRequest {
 	public void setExpired(String expired) {
 		this.expired = expired;
 	}
-
-	@NotBlank
-	@NotEmpty
-	@NotNull
+	@Id
+	@NotBlank(message="TradeId can't be blank")
+	@NotEmpty(message=" TradeId can't be empty")
+	@NotNull(message=" TradeId can't be null")
+	@Size(max=255)																			// the maximum size of tradeId can be 255 characters as h2 db has String of size 255 Chars
 	private String tradeId;
-	@Column(name="VERSION")
-	@NotNull
+	@NotNull(message="version can't be null")
 	private Integer version;
-	@NotNull
-	@NotEmpty
+	@NotBlank(message="counterPartyId can't be blank")
+	@NotEmpty(message="counterPartyId can't be empty")
+	@NotNull(message="counterPartyId can't be null")
+	@Size(max=255)
 	private String counterPartyId;
-	@NotNull
-	@NotEmpty
-	@NotBlank
+	@NotBlank(message="bookingId can't be blank")
+	@NotEmpty(message="bookingId can't be empty")
+	@NotNull(message="bookingId can't be null")
+	@Size(max=255)
 	private String bookingId;
-	@NotNull
-	@NotEmpty
-	@Pattern(regexp="YYYY-MM-DD",message="Date should be in YYYY-MM-DD only")
 	private LocalDate maturityDate;
-	@Pattern(regexp="^(?:Y|N)$",message="expired flag can be Y or N only")
-	@NotNull
-	@NotEmpty
-	@NotBlank
+	@NotBlank(message="Expired can't be blank")
+	@NotEmpty(message="Expired can't be blank")
+	@NotNull(message=" Expired can't be null")
+	@Size(max=1,min=1)
+	@Pattern(regexp="^(?:Y|N)$",message="expired flag can be Y or N only")					// assumming expiry flag of trade can be Y or N only and adding this validation
 	private String expired;
 
 }
+
+

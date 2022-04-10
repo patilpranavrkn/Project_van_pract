@@ -1,4 +1,4 @@
-package com.example.h2;
+package com.tradestoreproj.barclays;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

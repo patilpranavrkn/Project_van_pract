@@ -1,9 +1,9 @@
-package com.example.h2.constant;
+package com.tradestoreproj.barclays.constant;
 
 public final class StoreConstants {
 	
 	   private StoreConstants() throws Exception {
-         throw new Exception("Cant be initiated");
+         throw new Exception("Can't be initiated");
    }
 	   public  static final String HTTP_OK_STATUS_CODE="200";
 	   public  static final String VALID_MESSAGE="Valid";

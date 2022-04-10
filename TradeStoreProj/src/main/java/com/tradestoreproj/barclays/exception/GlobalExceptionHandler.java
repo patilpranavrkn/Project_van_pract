@@ -1,4 +1,4 @@
-package com.example.h2.exception;
+package com.tradestoreproj.barclays.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 
-import com.example.h2.model.BaseApiResponse;
+import com.tradestoreproj.barclays.model.BaseApiResponse;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {

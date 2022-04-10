@@ -1,4 +1,4 @@
-package com.example.h2.exception;
+package com.tradestoreproj.barclays.exception;
 
 public class TradeOperationsCustomException extends RuntimeException{
 	

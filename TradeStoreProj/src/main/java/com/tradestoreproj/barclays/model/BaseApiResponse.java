@@ -1,4 +1,4 @@
-package com.example.h2.model;
+package com.tradestoreproj.barclays.model;
 
 public class BaseApiResponse {
 	

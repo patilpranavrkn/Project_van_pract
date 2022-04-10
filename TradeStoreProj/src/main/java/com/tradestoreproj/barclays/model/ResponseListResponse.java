@@ -1,8 +1,8 @@
-package com.example.h2.model;
+package com.tradestoreproj.barclays.model;
 
 import java.util.List;
 
-import com.example.h2.entity.TradeStore;
+import com.tradestoreproj.barclays.entity.TradeStore;
 
 public class ResponseListResponse extends BaseApiResponse {
 	
